@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Form Login</title>
+    </head>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(cloud.jpg);
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1350px;
+        }
+
+        button a{
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s ;
+        }
+
+        button a:hover{
+            font-size: 30px;
+            text-decoration: none;
+            color: rgb(68, 152, 231);
+            transform: scale(1.1);
+        }
+    </style>
+    <body>
+        <fieldset style="width: 560;">
+            <legend align="center"><h2>Form Login</h2></legend>
+        <table border="0" align="center">
+            <tr>
+                <td colspan="3" align="center"><img src="logo-removebg-preview 1.png" width="200" height="220"></td>
+            </tr>
+            <tr>
+                <td colspan="3" height="30"></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td> : </td>
+                <td><input type="text" size="50"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td> : </td>
+                <td>
+                    <input type="password" size="50" id="inputPassword">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="checkbox" onclick="myFunction()">Tampilkan Password
+                
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("inputPassword");
+                            if (x.type === "password") {
+                                x.type = "text";
+                            } else {
+                                x.type = "password";
+                            }
+                        }
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" height="30"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    <button type="submit"><a href="index.html">Login
+                </td>
+                <td align="right">
+                    <button type="reset"><a href="FormLogin.html"> Reset
+                </td>
+            </tr>
+        </table>
+        </fieldset>
+    </body>
+</html>
