@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      background-image: url(sawah.jpg);
+      z-index: -1;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 1350px;
+
+    }
+
+    .login-container {
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      width: 300px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 18px;
+      pointer-events: all;
+      /* Ensure the icon can be clicked */
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      transition: color 0.3s, transform 0.3s ;
+    }
+
+    .login-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="form.php" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Nomor Telepon</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <input type="password" id="password" name="password" required>
+          <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+        </div>
+      </div>
+      <button type="submit" name="action" value="insert" class="login-btn">Send</button></a>
+      <button type="submit" name="action" value="update" class="login-btn">Update</button>
+      <button type="submit" name="action" value="delete" class="login-btn">Delete</button>
+    </form>
+    <a href="tampilkan.php" target="blank"><button type="submit" class="login-btn">View</button></a>
+  </div>
+
+  <script>
+    function togglePasswordVisibility() {
+      var passwordField = document.getElementById("password");
+      var passwordFieldType = passwordField.getAttribute("type");
+      if (passwordFieldType === "password") {
+        passwordField.setAttribute("type", "text");
+      } else {
+        passwordField.setAttribute("type", "password");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
